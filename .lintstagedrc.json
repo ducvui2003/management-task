@@ -1,0 +1,9 @@
+{
+    "*": [
+        "echo \"Running lint-staged\""
+    ],
+    "*.{js,jsx,ts,tsx,json,css}": [
+        "echo \"Running prettier\"",
+        "npm run prettier:write"
+    ]
+}
