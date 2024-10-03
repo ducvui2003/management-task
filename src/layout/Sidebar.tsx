@@ -7,7 +7,7 @@
  **/
 
 import React from 'react'
-import Nav from '@/components/Nav.tsx'
+import Nav from '@/components/Nav'
 
 function Sidebar() {
   return (

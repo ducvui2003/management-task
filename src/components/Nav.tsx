@@ -10,60 +10,60 @@ import React from 'react'
 import { Book1, Category2, Message, Setting2, UserOctagon } from 'iconsax-react'
 import Logo from './Logo'
 import HelpCenter from './HelpCenter'
-import Link from './Link'
+import AppLink from '@/components/AppLink'
 
 function Nav() {
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex h-screen flex-col">
       <Logo />
       <ul className="mt-14 flex flex-col gap-6">
         <li>
-          <Link
+          <AppLink
             to={'/'}
-            className={'flex gap-3 items-center px-5 py-3 text-secondary-300'}
+            className={'flex items-center gap-3 px-5 py-3 text-secondary-300'}
             activeClassName="text-secondary-500 bg-[#F5F5F7]"
           >
             <Category2 size="24" className="text-inherit" />
             Overview
-          </Link>
+          </AppLink>
         </li>
         <li>
-          <Link
+          <AppLink
             to={'/task'}
-            className={'flex gap-3 items-center text-secondary-300 px-5 py-3'}
+            className={'flex items-center gap-3 px-5 py-3 text-secondary-300'}
             activeClassName="text-secondary-500 bg-[#F5F5F7]"
           >
             <Book1 size="24" className="text-inherit" /> Task
-          </Link>
+          </AppLink>
         </li>
         <li>
-          <Link
-            className={'flex gap-3 items-center text-secondary-300 px-5 py-3'}
+          <AppLink
+            className={'flex items-center gap-3 px-5 py-3 text-secondary-300'}
             activeClassName="text-secondary-500 bg-[#F5F5F7]"
             to={'/mentor'}
           >
             <UserOctagon size="24" className="text-inherit" />
             Mentor
-          </Link>
+          </AppLink>
         </li>
         <li>
-          <Link
+          <AppLink
             to={'/message'}
-            className={'flex gap-3 items-center text-secondary-300 px-5 py-3'}
+            className={'flex items-center gap-3 px-5 py-3 text-secondary-300'}
             activeClassName="text-secondary-500 bg-[#F5F5F7]"
           >
             <Message size="24" className="text-inherit" />
             Message
-          </Link>
+          </AppLink>
         </li>
         <li>
-          <Link
+          <AppLink
             to={'setting'}
-            className={'flex gap-3 items-center text-secondary-300 px-5 py-3'}
+            className={'flex items-center gap-3 px-5 py-3 text-secondary-300'}
             activeClassName="text-secondary-500 bg-[#F5F5F7]"
           >
             <Setting2 size="24" className="text-inherit" /> Setting
-          </Link>
+          </AppLink>
         </li>
       </ul>
       <div className="mt-auto">
