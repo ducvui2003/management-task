@@ -13,7 +13,7 @@ const HelpCenter: React.FC = () => {
 
       <div className="relative overflow-hidden p-4">
         <div className="mb-[45px] mt-[71px]">
-          <Typography tag="h3" align="center" weight="semibold" type={'@16'}>
+          <Typography tag="h3" align="center" weight="semibold" type="@16">
             Help Center
           </Typography>
           <Typography tag="body" align="center" weight="medium" type="@12">
@@ -21,7 +21,7 @@ const HelpCenter: React.FC = () => {
           </Typography>
         </div>
         <button className="rounded-xl bg-white px-6 py-3 text-secondary-500">
-          <Typography weight={'semibolda'} type={'@12'} align={'center'}>
+          <Typography weight="semibold" type="@12" align={'center'}>
             Go to Help Center
           </Typography>
         </button>

@@ -10,7 +10,7 @@ const Logo = () => {
         // color={tailwindConfig.theme.extend.colors.primary[500]}
         variant="Bold"
       />
-      <Typography tag="h1" type={'@32'} weight={'semibold'}>
+      <Typography tag="h1" type="@32" weight="semibold">
         Nuegas
       </Typography>
     </div>
