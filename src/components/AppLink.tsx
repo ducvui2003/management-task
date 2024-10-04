@@ -1,13 +1,16 @@
+'use client'
 import { cn } from '@/lib/utils'
 import { cva, VariantProps } from 'class-variance-authority'
-import { AnchorHTMLAttributes, ReactNode } from 'react'
-import { NavLink, NavLinkProps } from 'react-router-dom'
+import React, { AnchorHTMLAttributes, ReactNode } from 'react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+
 type LinkProps = AnchorHTMLAttributes<HTMLAnchorElement> &
   VariantProps<typeof linkVariants> &
-  NavLinkProps &
   React.RefAttributes<HTMLAnchorElement> & {
     children?: ReactNode
     activeClassName?: string
+    to: string
   }
 
 const linkVariants = cva('text-base  rounded-xl', {
@@ -25,14 +28,14 @@ const linkVariants = cva('text-base  rounded-xl', {
       true: 'underline decoration-solid',
       false: 'no-underline',
     },
-  },
-  defaultVariants: {
-    variant: 'default',
-    size: 'md',
-    underline: false,
+    defaultVariants: {
+      variant: 'default',
+      size: 'md',
+      underline: false,
+    },
   },
 })
-const Link = ({
+const AppLink = ({
   to,
   variant,
   underline,
@@ -40,23 +43,21 @@ const Link = ({
   size,
   className,
   children,
-  ...props
 }: LinkProps) => {
+  const pathname = usePathname()
+  const isActive = pathname.startsWith(to)
   return (
-    <NavLink
-      to={to}
-      className={({ isActive }) => {
-        return cn(
-          linkVariants({ variant, size }),
-          isActive ? activeClassName || linkVariants({ underline }) : '',
-          className
-        )
-      }}
-      {...props}
+    <Link
+      href={to}
+      className={cn(
+        linkVariants({ variant, size }),
+        isActive ? activeClassName || linkVariants({ underline }) : '',
+        className
+      )}
     >
       {children}
-    </NavLink>
+    </Link>
   )
 }
 
-export default Link
+export default AppLink
